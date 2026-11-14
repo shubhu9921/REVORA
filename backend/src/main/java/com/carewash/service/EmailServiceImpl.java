@@ -62,7 +62,7 @@ public class EmailServiceImpl implements EmailService {
             helper.setSubject(subject);
             helper.setText(htmlBody, true);
             mailSender.send(message);
-        } catch (MessagingException e) {
+        } catch (Exception e) {
             // Log the error but don't crash, or rethrow as a custom exception
             System.err.println("Failed to send email to " + to + ": " + e.getMessage());
         }
